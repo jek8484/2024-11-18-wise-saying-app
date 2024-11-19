@@ -2,14 +2,14 @@ package com.ll;
 
 import java.util.Scanner;
 
-public class Main {
+public class Main2 {
     public static void main(String[] args) {
-        App app = new App();
+        App2 app = new App2();
         app.run();
     }
 }
 
-class App {
+class App2 {
     public void run() {
         System.out.println("== 명언 앱 ==");
 
