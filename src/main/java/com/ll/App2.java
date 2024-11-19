@@ -1,11 +1,11 @@
 package com.ll;
 
-public class App {
+public class App2 {
     private int id = 0; // 번호
     private String mu = ""; // 명언
     private String jk = ""; // 작가
 
-    public App(int id, String mu, String jk) {
+    public App2(int id, String mu, String jk) {
         this.id = id;
         this.mu = mu;
         this.jk = jk;
