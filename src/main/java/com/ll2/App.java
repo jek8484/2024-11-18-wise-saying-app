@@ -3,9 +3,9 @@ package com.ll2;
 import java.util.Scanner;
 
 public class App {
-    private Scanner scanner;
+    private final Scanner scanner;
     private int lastId;
-    private WiseSaying[] wiseSayings;
+    private final WiseSaying[] wiseSayings;
     private int wiseSayingsSize;
 
     public App() {

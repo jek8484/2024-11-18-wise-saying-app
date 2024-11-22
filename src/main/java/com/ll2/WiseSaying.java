@@ -1,7 +1,7 @@
 package com.ll2;
 
 public class WiseSaying extends Object {
-    public int id;
+    public final int id;
     public String content;
     public String author;
 
