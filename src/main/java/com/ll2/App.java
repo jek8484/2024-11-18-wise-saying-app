@@ -1,25 +1,25 @@
 package com.ll2;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class App {
     private final Scanner scanner;
     private int lastId;
-    private final WiseSaying[] wiseSayings;
+    private final List<WiseSaying> wiseSayings;
     private int wiseSayingsSize;
 
     public App() {
         scanner = new Scanner(System.in);
         lastId = 0;
-        wiseSayings = new WiseSaying[3];
-        wiseSayingsSize = 0;
+        wiseSayings = new ArrayList<>();
     }
 
     public void run() {
         System.out.println("== 명언 앱 ==");
 
-        addWiseSaying("이순신 명언", "이순신 작가");
-        addWiseSaying("키케로 명언", "키케로 작가");
+        makeSampleData();
 
         while (true) {
             System.out.print("명령) ");
@@ -37,12 +37,16 @@ public class App {
         scanner.close();
     }
 
+    private void makeSampleData() {
+        addWiseSaying("이순신 명언", "이순신 작가");
+        addWiseSaying("키케로 명언", "키케로 작가");
+    }
+
     private void actionList() {
         System.out.println("번호 / 작가 / 명언");
         System.out.println("----------------------");
 
-        for (int i = 0; i < wiseSayingsSize; i++) {
-            WiseSaying wiseSaying = wiseSayings[i];
+        for (WiseSaying wiseSaying : wiseSayings) {
             System.out.println("%d / %s / %s".formatted(wiseSaying.getId(), wiseSaying.getAuthor(), wiseSaying.getContent()));
         }
     }
@@ -63,8 +67,7 @@ public class App {
 
         WiseSaying wiseSaying = new WiseSaying(id, content, author);
 
-        wiseSayings[wiseSayingsSize] = wiseSaying;
-        wiseSayingsSize++;
+        wiseSayings.add(wiseSaying);
 
         return wiseSaying;
     }
